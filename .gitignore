@@ -1,3 +1,13 @@
+# Project specific
+build
+doxygen
+
+# Tooling
+.vscode
+.VSCodeCounter
+cpp.code-workspace
+TODO
+
 # Prerequisites
 *.d
 

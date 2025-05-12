@@ -1,0 +1,8 @@
+(def Exp2 (n) (then)
+  (ifz n 
+    [1 then]
+    (+ (mu then' (- n 1 (mu' x (Exp2 (x) (then'))))) 
+       (mu then' (- n 1 (mu' x (Exp2 (x) (then')))))
+       then)))
+(def try_setting_this_to_10 (or) (even) [15 <END>])
+(Exp2 (5) (<END>))

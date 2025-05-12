@@ -1,0 +1,12 @@
+{
+    BasedOnStyle: Microsoft,
+    UseTab: Never,
+    BreakBeforeBraces: Mozilla,
+    IndentCaseLabels: true,
+    ColumnLimit: 80,
+    ReflowComments: false,
+    AllowShortFunctionsOnASingleLine: Empty,
+    PackConstructorInitializers: NextLineOnly,
+    BreakTemplateDeclarations: Yes,
+    PointerAlignment: Left,
+}

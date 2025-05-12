@@ -1,0 +1,14 @@
+(def Fib (n) (then)
+  (ifz n 
+    [0 then]
+    (- n 1 
+      (mu' n'
+        (ifz n' 
+          [1 then]
+          (+ (mu then' (Fib (n') (then'))) 
+             (mu then'' 
+               (- n 2 
+                 (mu' n'' 
+                   (Fib (n'') (then''))))) 
+            then))))))
+(Fib (15) (<END>))

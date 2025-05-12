@@ -1,0 +1,7 @@
+(def ExtractLazy (lazy) (then)
+  [(Pair ((mu fstThen [lazy (Fst (fstThen))]) 
+          (mu sndThen [lazy (Snd (sndThen))])))
+    then])
+(ExtractLazy ((cocase ((Fst (fstThen) [123 fstThen])
+                       (Snd (sndThen) [321 sndThen]))))
+             (<END>))

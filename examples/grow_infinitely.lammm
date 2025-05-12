@@ -1,0 +1,3 @@
+(def GrowInfinitely (list) ()
+  (GrowInfinitely ((Cons (0 list))) ()))
+(GrowInfinitely ((Nil)) ())

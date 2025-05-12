@@ -1,0 +1,35 @@
+(def Stream2List (stream) (then)
+  [(Cons ((mu xThen 
+            [stream (Head (xThen))])
+          (mu xsThen 
+            [stream 
+             (Tail ((mu' xs 
+                      (Stream2List (xs) (xsThen)))))]))) 
+   then])
+(def InfiniteStream (x) (then)
+  [(cocase ((Head (xThen) 
+              [x xThen]) 
+            (Tail (xsThen) 
+              (InfiniteStream (x) (xsThen))))) 
+   then])
+(def TakeN (n xs) (then)
+  (ifz n 
+    [(Nil) then]
+    [xs 
+     (case ((Nil 
+              [(Nil) then])
+            (Cons (x xs') 
+              (- n 1 
+                (mu' n'
+                  [(Cons (x 
+                          (mu xsThen
+                            (TakeN (n' xs') (xsThen))))) 
+                   then])))))]))
+(def this_would_work_in_call-by-name 
+  (but since lamm is call-by-value)
+  (it tries to evaluate the full ininite list first)
+  [(Nil) <END>])
+(Stream2List ((mu then
+                (InfiniteStream (69420) (then)))) 
+             ((mu' xs
+                (TakeN (5 xs) (<END>)))))
